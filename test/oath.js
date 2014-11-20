@@ -20,6 +20,7 @@ describe('oath', function () {
       it('should call then on a promise resolution', function (done) {
         promiseTimeout(function () {}, 5)
           .then(done);
+        console.log('complete');
       });
 
       it('should pass a resolved value to then', function (done) {
@@ -112,7 +113,7 @@ describe('oath', function () {
           return num + 20;
         }, 5);
       };
-
+      debugger;
       step1(100).then(step2).then(function (num) {
         expect(num).to.equal(130);
         done();
